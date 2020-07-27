@@ -16,11 +16,13 @@
 },
 "plugins": [
     "@typescript-eslint",
-    "prettier"
+    "prettier",
+    "no-loops"
 ],
 
 
 "rules": {
-  "prettier/prettier": ["error"]
+  "prettier/prettier": ["error"],
+  "no-loops/no-loops": 2
 }
 }

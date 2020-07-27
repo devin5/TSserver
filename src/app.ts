@@ -14,4 +14,8 @@ app.use(async (req: any, res: Response, next: NextFunction) => {
     next()
 })
 
+for (let i = 0; i < 12; i++) {
+    console.log(i);
+  }
+
 app.use("/api/auth", authRouter)
