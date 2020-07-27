@@ -1,6 +1,6 @@
-import 'dotenv/config'
-import { connectDb } from './data'
-import { app } from './app'
+import "dotenv/config"
+import { connectDb } from "./data"
+import { app } from "./app"
 
 connectDb().then(async () => {
     app.listen(process.env.PORT, () =>

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose"
 
 const userSchema: mongoose.Schema = new mongoose.Schema(
     {
@@ -49,12 +49,12 @@ userSchema.statics.addUser = async function (userObj: Record<string, unknown>) {
 userSchema.statics.deleteAllData = async function () {
     try {
         await this.deleteMany()
-        console.log('All Data successfully deleted')
+        console.log("All Data successfully deleted")
     } catch (err) {
         console.log(err)
     }
 }
 
-const Users = mongoose.model('Users', userSchema)
+const Users = mongoose.model("Users", userSchema)
 
 export default Users

@@ -1,8 +1,8 @@
-import 'dotenv/config'
-import express, { Application, Response, NextFunction } from 'express'
-import models from './data'
-import serverConfig from './middleware/configApi'
-import { authRouter } from './auth/authRouter'
+import "dotenv/config"
+import express, { Application, Response, NextFunction } from "express"
+import models from "./data"
+import serverConfig from "./middleware/configApi"
+import { authRouter } from "./auth/authRouter"
 
 export const app: Application = express()
 serverConfig(app)
@@ -14,4 +14,4 @@ app.use(async (req: any, res: Response, next: NextFunction) => {
     next()
 })
 
-app.use('/api/auth', authRouter)
+app.use("/api/auth", authRouter)
