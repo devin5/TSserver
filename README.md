@@ -11,7 +11,7 @@
     
     
 
-***Husky runs before every Commit and Push*****
+***Husky runs es-lint before every Commit and tests before every Push*****
 
 "husky": {   
     "hooks": {  
@@ -22,18 +22,16 @@
     
  ***Testing***
  SuperTest and Jest  
- tests ran before every push through husky  
+ tests ran before every push through husky and through test script  
 
 
-
-
-# typescript boilerplate restAPI Backend
 
 
 # Deployed Backend
- site is not deployed. oyu will need to download mongo db and get your own db going. then replace
- an env var for in DATABASE_UR .enc-cmdrc
+API is not deployed. you will need to download mongo db and get your own db going. Then replace
+ DATABASE_URL variable in .enc-cmdrc
  make sure you make a seperate db for testing.
+ 
  
  /.enc-cmdrc    
  {     
@@ -53,31 +51,31 @@
 
 #### production
 
-    -"bcryptjs": "^2.4.3",     
-    -"body-parser": "^1.19.0",     
-    -"cors": "^2.8.5",     
-    -"dotenv": "^8.2.0",          
-    -"env-cmd": "^10.1.0",     
-    -"express": "^4.17.1",     
-    -"helmet": "^3.23.3",     
-    -"jsonwebtoken": "^8.5.1",     
-    -"mongoose": "^5.9.25",     
-    -"morgan": "^1.10.0",     
-    -"prettier-format": "^1.1.5"     
+    -"bcryptjs": "^2.4.3", => -hash password.    
+    -"body-parser": "^1.19.0", => -needed for mongoDB requests   
+    -"cors": "^2.8.5", => sets up cross origin url 
+    -"dotenv": "^8.2.0", => sets up ENV. I later changed too env-cmd for ease with testing.   
+    -"env-cmd": "^10.1.0", => env with lots of config options
+    -"express": "^4.17.1", => express lib  
+    -"helmet": "^3.23.3", => hides headers on req&res    
+    -"jsonwebtoken": "^8.5.1", => authentication token  
+    -"mongoose": "^5.9.25", => the Phone between mongoDb and node
+    -"morgan": "^1.10.0", => Basically just logger middleware
+    -"prettier-format": "^1.1.5" => prettier plugin
 
 
 #### Developer
 
 
-    -"eslint": "^7.5.0",     
-    -"eslint-config-prettier": "^6.11.0",     
-    -"eslint-plugin-no-loops": "^0.3.0",     
-    -"eslint-plugin-prettier": "^3.1.4",     
-    -"husky": "^4.2.5",     
-    -"jest": "^26.1.0",     
-    -"nodemon": "^2.0.4",     
-    -"prettier": "^2.0.5",     
-    -"supertest": "^4.0.2",     
-    -"ts-jest": "^26.1.3",     
-    -"ts-node": "^8.10.2",     
-    -"typescript": "^3.9.7"     
+    -"eslint": "^7.5.0", => linter of choice  
+    -"eslint-config-prettier": "^6.11.0", => configs prettier in linter    
+    -"eslint-plugin-no-loops": "^0.3.0", => rule for not allowing for loops(dumb)    
+    -"eslint-plugin-prettier": "^3.1.4", => integrates prettier in linter  
+    -"husky": "^4.2.5", => git hoookss ===>> sooooo coool.       
+    -"jest": "^26.1.0", => Testing framework  
+    -"nodemon": "^2.0.4", => sets up dev server with hot reload 
+    -"prettier": "^2.0.5", => formats codes     
+    -"supertest": "^4.0.2", => library that makes testing express easier with jest.   
+    -"ts-jest": "^26.1.3", => allows you to use jest testing with typescript.       
+    -"ts-node": "^8.10.2", => lets node interpret TS directly for dev 
+    -"typescript": "^3.9.7" => my fav language... the first time ...... nevermind you will see
