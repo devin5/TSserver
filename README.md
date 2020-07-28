@@ -2,12 +2,12 @@
 
 
 ***scripts***
-    -"start": "node dist/index.js",
-    -"build": "tsc -p .",
-    -"dev": "env-cmd -e dev nodemon src/index.ts",
-    -"prettier-format": "prettier --config .prettierrc 'src/\**/*\.ts' --write",
-    -"lint": "eslint . --ext .ts",
-    -"test": "env-cmd -e test jest --watch"
+    -"start": "node dist/index.js",  
+    -"build": "tsc -p .",   
+    -"dev": "env-cmd -e dev nodemon src/index.ts",  
+    -"prettier-format": "prettier --config .prettierrc 'src/\**/*\.ts' --write",  
+    -"lint": "eslint . --ext .ts",  
+    -"test": "env-cmd -e test jest --watch". 
     
     
 
