@@ -1,5 +1,5 @@
-import "dotenv/config"
 import mongoose, { Mongoose } from "mongoose"
+
 import Users from "./models/usersModel"
 
 let url: string

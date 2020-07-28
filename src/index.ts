@@ -1,4 +1,3 @@
-import "dotenv/config"
 import { connectDb } from "./data"
 import { app } from "./app"
 

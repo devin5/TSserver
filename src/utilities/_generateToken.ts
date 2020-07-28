@@ -1,4 +1,3 @@
-import "dotenv/config"
 import jwtToken, { Secret } from "jsonwebtoken"
 
 export default function generateToken(

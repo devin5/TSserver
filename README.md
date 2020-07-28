@@ -4,7 +4,7 @@ Typescript
 Node
 Express
 Bcrypt
-dotenv
+env-cmd
 JWT
 Morgan
 Helmet
