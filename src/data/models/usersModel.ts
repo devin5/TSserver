@@ -1,4 +1,12 @@
-import mongoose from "mongoose"
+import mongoose, { Document, Schema, Model, model } from "mongoose"
+
+export interface IUser extends Document {
+    email: string
+    username: string
+    hash?: string
+    createdAt?: Date
+    updateAt?: Date
+}
 
 const userSchema: mongoose.Schema = new mongoose.Schema(
     {
@@ -22,31 +30,32 @@ const userSchema: mongoose.Schema = new mongoose.Schema(
     { timestamps: true }
 )
 
-userSchema.statics.findByLogin = async function (loginString: string) {
-    let user = await this.findOne({
+userSchema.methods.findByEmail = async function (loginString: string) {
+    const user = await this.findOne({
+        email: loginString,
+    })
+    return user
+}
+userSchema.methods.findByUsername = async function (loginString: string) {
+    const user = await this.findOne({
         username: loginString,
     })
-
-    if (!user) {
-        user = await this.findOne({ email: loginString })
-    }
-
     return user
 }
 
-userSchema.statics.findAll = async function () {
+userSchema.methods.findAll = async function () {
     const users = await this.find()
 
     return users
 }
 
-userSchema.statics.addUser = async function (userObj: Record<string, unknown>) {
+userSchema.methods.addUser = async function (userObj: Record<string, unknown>) {
     const answer = await this.create(userObj)
 
     return answer
 }
 
-userSchema.statics.deleteAllData = async function () {
+userSchema.methods.deleteAllData = async function () {
     try {
         await this.deleteMany()
         console.log("All Data successfully deleted")
@@ -55,6 +64,6 @@ userSchema.statics.deleteAllData = async function () {
     }
 }
 
-const Users = mongoose.model("Users", userSchema)
+const Users: Model<IUser> = model<IUser>("Users", userSchema)
 
 export default Users
