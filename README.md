@@ -1,7 +1,7 @@
 # TSserver
 
 
-***scripts***
+***scripts***   
     -"start": "node dist/index.js",  
     -"build": "tsc -p .",   
     -"dev": "env-cmd -e dev nodemon src/index.ts",  
