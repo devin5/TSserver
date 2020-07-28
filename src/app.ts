@@ -1,21 +1,13 @@
-import "dotenv/config"
-import express, { Application, Response, NextFunction } from "express"
-import models from "./data"
+import express, { Request, Response } from "express"
 import serverConfig from "./middleware/configApi"
-import { authRouter } from "./auth/authRouter"
+import { authRouter } from "./auth/routes"
 
-export const app: Application = express()
+export const app: express.Application = express()
+
 serverConfig(app)
-// sets the model context for our Routes
-app.use(async (req: any, res: Response, next: NextFunction) => {
-    req.context = {
-        models,
-    }
-    next()
-})
-
-for (let i = 0; i < 12; i++) {
-    console.log(i);
-  }
 
 app.use("/api/auth", authRouter)
+
+app.use("/", (req: Request, res: Response) => {
+    res.status(200).json({ message: "fsafsfsda" })
+})
