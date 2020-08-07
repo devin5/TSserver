@@ -63,7 +63,6 @@
     "hooks": {
       "pre-commit": "npm run prettier-format && npm run lint",
       "pre-push": "env-cmd -e test jest"
-      
     }
   }
 }
