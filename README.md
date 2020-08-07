@@ -71,4 +71,4 @@ make sure you make a seperate db for testing.
     -"ts-jest": "^26.1.3", => allows you to use jest testing with typescript.
     -"ts-node": "^8.10.2", => lets node interpret TS directly for dev
     -"typescript": "^3.9.7" => my fav language... the first time ...... nevermind you will see
-    //f
+    //ff
